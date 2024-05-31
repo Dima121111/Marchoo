@@ -1,16 +1,11 @@
-html{
+html {
   box-sizing: border-box;
 }
 
 *,
 *::after,
-*::before{
+*::before {
   box-sizing: inherit;
-}
-
-ul[class],
-ol[class] {
-  padding: 0;
 }
 
 body,
@@ -21,8 +16,8 @@ h4,
 h5,
 h6,
 p,
-ul,
 ol,
+ul,
 li,
 figure,
 figcaption,
@@ -32,7 +27,12 @@ dd {
   margin: 0;
 }
 
-ul[class] {
+ol,
+ul {
+  padding: 0;
+}
+
+ul {
   list-style: none;
 }
 
@@ -46,8 +46,19 @@ button,
 textarea,
 select {
   font: inherit;
+  border: none;
+  background-color: transparent;
+  outline: transparent;
 }
 
-a{
+a {
+  display: inline-block;
   text-decoration: none;
+  color: inherit;
+  outline: transparent;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
 }
