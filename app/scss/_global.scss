@@ -20,7 +20,7 @@ body {
 	min-height: 100%;
 }
 
-.main{
+.main {
 	flex-grow: 1;
 }
 
@@ -28,6 +28,10 @@ body {
 	max-width: 1200px;
 	padding: 0 15px;
 	margin: 0 auto;
+}
+
+.section {
+	padding: 120px 0;
 }
 
 .visually-hidden {
@@ -51,3 +55,26 @@ body {
 	}
 }
 
+%title {
+	@extend %Roboto-Bold;
+	font-size: 48px;
+	line-height: 26px;
+	color: $title-color;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+
+.title {
+	@extend %title;
+}
+
+%heading {
+	max-width: 520px;
+	width: 100%;
+	margin: 0 auto 60px;
+	text-align: center;
+}
+
+.heading {
+	@extend %heading;
+}

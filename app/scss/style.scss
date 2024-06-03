@@ -129,7 +129,6 @@
 }
 
 .header-slider {
-  padding-top: 65px;
   background-color: $bg-section;
 
   &__container {
@@ -138,6 +137,7 @@
   }
 
   &__item {
+    height: calc(100vh - 110px);
     display: flex !important;
     justify-content: space-between;
     align-items: center;
@@ -165,6 +165,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+
     li:not(:last-child) {
       margin-right: 40px;
     }
@@ -180,6 +181,7 @@
       border-radius: 50%;
       position: absolute;
       bottom: 26px;
+
       &::before {
         content: "";
         width: 6px;
@@ -390,5 +392,169 @@
   }
 }
 
+.availability {
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &::before,
+    &::after {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      z-index: -10;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: -50px;
+      background-image: url('../images/decors/availability-decor 1.svg');
+      width: 125px;
+      height: 125px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url('../images/decors/availability-decor 2.svg');
+      width: 75px;
+      height: 58px;
+      bottom: -27px;
+      right: -21px;
+    }
+  }
+
+  &__item {
+    padding: 60px 40px;
+    max-width: 370px;
+    width: 100%;
+    background-color: $bg-color;
+    box-shadow: 20px 0px 30px rgba(202, 202, 202, 0.35);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 60px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-bottom: 40px;
+    }
+
+    &--order::before {
+      content: "";
+      background-image: url('../images/availability/availability-icon.svg');
+    }
+
+    &--return::before {
+      background-image: url('../images/availability/availability-icon 2.svg');
+    }
+
+    &--support::before {
+      background-image: url('../images/availability/availability-icon 3.svg');
+    }
+  }
+
+  &__title {
+    color: $title-color;
+    @extend %Roboto-Regular;
+    line-height: 1.1;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.categories {
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__wrap {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+
+  &__item:nth-child(1) {
+    grid-row: span 2;
+  }
+
+  &__item:nth-child(2) {
+    grid-column: span 2;
+
+    .categories__wrap {
+      top: 106px;
+    }
+
+    .categories__info {
+      color: $button-color;
+    }
+  }
+
+  &__item:nth-child(3) {
+    .categories__info {
+      color: $yellow;
+    }
+  }
+
+  &__item:nth-child(4) {
+    .categories__info {
+      color: $blue;
+    }
+  }
+
+  &__info {
+    display: inline-block;
+    color: $purple;
+    margin-bottom: 5px;
+  }
+
+  &__caption {
+    font-size: 22px;
+    line-height: 26px;
+    @extend %Roboto-Medium;
+    margin-bottom: 7px;
+    color: $title-color;
+  }
+
+  &__link {
+    letter-spacing: 1px;
+    color: $title-color;
+    text-transform: uppercase;
+    @extend %Roboto-Regular;
+    border-bottom: 1px solid transparent;
+    transition: color 0.5s, border-bottom 0.5s, outline 0.5s, opacity 0.5s;
+
+    &:hover {
+      border-bottom: 1px solid $button-color;
+      color: $button-color;
+    }
+
+    &:focus {
+      outline: 1px solid $button-color;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+}
 
 @import 'media';
