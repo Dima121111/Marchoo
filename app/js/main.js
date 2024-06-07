@@ -7,3 +7,10 @@ $(function () {
     });
 })
 
+$(".stars").rateYo({
+    numStars: 5,
+    starWidth: "17px",
+    normalFill:"#ccccce",
+    ratedFill:"#ffc35b",
+
+})

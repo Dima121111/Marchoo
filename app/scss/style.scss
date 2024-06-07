@@ -376,6 +376,115 @@
 
 }
 
+.products {
+  text-align: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 30px;
+  margin-bottom: 60px;
+
+  &__item {
+    max-width: 370px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__item:hover {
+    .card__navigations {
+      transform: translateY(0);
+    }
+  }
+
+  &__image {
+    margin-bottom: 30px;
+  }
+
+  &__navigations {
+    border-radius: 25px;
+    padding: 15px 0;
+    background-color: $bg-color;
+    position: absolute;
+    display: flex;
+    bottom: 120px;
+    transition: transform 0.4s;
+    transform: translateY(300%);
+  }
+
+  &__wrap {
+    position: relative;
+    margin: 0 26px;
+  }
+
+  &__wrap--line::before,
+  &__wrap--line::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background-color: #cecece;
+    top: 0;
+  }
+
+  &__wrap--line::before {
+    right: 50px;
+  }
+
+  &__wrap--line::after {
+    left: 50px;
+  }
+
+  &__link path {
+    transition: fill 0.5s, opacity 0.5s;
+    border-radius: 25px;
+  }
+
+  &__link:hover {
+    path {
+      fill: $button-color;
+    }
+  }
+
+  &__link:focus {
+    path {
+      opacity: 50%;
+    }
+  }
+
+  &__link:active {
+    path {
+      opacity: 20%;
+    }
+  }
+
+
+  &__title {
+    font-size: 22px;
+    margin-bottom: 18px;
+    @extend %Roboto-Regular;
+    color: $title-color;
+  }
+
+  &__sum {
+    color: $title-color;
+    @extend %Roboto-Medium;
+  }
+
+  &__sum-action {
+    color: #ccccce;
+    position: relative;
+    text-decoration: line-through;
+    margin-left: 25px;
+  }
+}
+
 .fashion {
   background-position: center;
   background-size: cover;
@@ -456,6 +565,10 @@
   &__text {
     margin-bottom: 50px;
   }
+}
+
+.stars {
+  margin-bottom: 18px;
 }
 
 .footer {
