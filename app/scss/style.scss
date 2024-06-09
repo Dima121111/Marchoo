@@ -413,9 +413,9 @@
     background-color: $bg-color;
     position: absolute;
     display: flex;
-    bottom: 120px;
+    bottom: 200px;
     transition: transform 0.4s;
-    transform: translateY(300%);
+    transform: translateY(500%);
   }
 
   &__wrap {
@@ -463,7 +463,6 @@
       opacity: 20%;
     }
   }
-
 
   &__title {
     font-size: 22px;
@@ -569,6 +568,231 @@
 
 .stars {
   margin-bottom: 18px;
+}
+
+.promo {
+  padding: 150px 0 160px;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-color: $bg-section;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__inner {
+    max-width: 570px;
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: $button-color;
+    margin-bottom: 25px;
+    display: inline-block;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  &__item {
+    box-shadow: 0px 10px 20px rgba(187, 187, 187, 0.3);
+    background-color: $bg-color;
+    border-radius: 50%;
+    padding: 30px 35px;
+    text-align: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__number {
+    font-size: 48px;
+    line-height: 26px;
+    @extend %Roboto-Bold;
+    color: $title-color;
+  }
+}
+
+.partner {
+  padding-bottom: 75px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 150px;
+  }
+}
+
+.blog {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url('../images/decors/blog-decor-1.svg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 112px;
+      height: 110px;
+      right: -108px;
+      top: -108px;
+    }
+  }
+
+  &__item {
+    max-width: 370px;
+    width: 100%;
+    border: 1px solid #ececec;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__item::before {
+    content: "";
+    display: block;
+    width: 365px;
+    height: 290px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+  }
+
+  &__item--bg1::before {
+    background-image: url('../images/blog/blog-decor-1.jpg');
+  }
+
+  &__item--bg2::before {
+    background-image: url('../images/blog/blog-decor-2.jpg');
+  }
+
+  &__item--bg3::before {
+    background-image: url('../images/blog/blog-decor-3.jpg');
+  }
+
+  &__content {
+    padding: 0 35px 30px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+  }
+
+  &__info::before {
+    content: "";
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    left: 0;
+  }
+
+  &__info--profile::before {
+    background-image: url('../images/navigations/profile.svg');
+  }
+
+  &__info--clock::before {
+    background-image: url('../images/decors/clock.svg');
+  }
+
+  &__info:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__text {
+    font-size: 22px;
+    line-height: 32px;
+    @extend %Roboto-Regular;
+    color: $title-color;
+    margin-bottom: 20px;
+  }
+
+  // &__item:hover {
+  //   .card__navigations {
+  //     transform: translateY(0);
+  //   }
+  // }
+  &__link {
+    border-radius: 2px;
+    padding-right: 20px;
+    position: relative;
+    transition: color 0.5s, outline 0.5s, opacity 0.5s;
+
+    svg {
+      position: absolute;
+      top: 5px;
+      right: 0px;
+    }
+
+    path {
+      transition: fill 0.5s;
+    }
+
+    &:hover {
+      color: $button-color;
+
+      path {
+        fill: $button-color;
+      }
+    }
+
+    &:hover {
+      .blog__item {
+        background-color: red;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid $button-color;
+    }
+
+    &:active {
+      opacity: 50%;
+    }
+  }
 }
 
 .footer {
