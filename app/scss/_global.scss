@@ -129,3 +129,17 @@ body {
 	left: 25px;
 	top: 25px;
 }
+
+%top-title {
+	font-size: 48px;
+	color: #15181d;
+	@extend %Roboto-Regular;
+	text-transform: uppercase;
+	color: #15181d;
+	margin-bottom: 15px;
+}
+
+
+.top-title {
+	@extend %top-title;
+}

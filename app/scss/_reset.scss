@@ -51,6 +51,11 @@ select {
   outline: transparent;
 }
 
+label {
+  padding: 0;
+  display: inline-block;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
