@@ -143,3 +143,131 @@ body {
 .top-title {
 	@extend %top-title;
 }
+
+%filter {
+	padding: 40px 28px;
+	margin-bottom: 30px;
+	border: 1px solid #ececec;
+}
+
+.filter {
+	@extend %filter;
+}
+
+%filter__title {
+	font-size: 22px;
+	text-transform: uppercase;
+	color: $title-color;
+	@extend %Roboto-Regular;
+	margin-bottom: 30px;
+}
+
+.filter__title {
+	@extend %filter__title;
+}
+
+
+%checkbox-none {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	position: absolute;
+}
+
+.card.active {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	.card__item {
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.card__image {
+		margin: 0 auto;
+	}
+
+	.card__info {
+		display: none;
+	}
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+
+	&__arrows {
+		text-transform: uppercase;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 12px;
+			height: 6px;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			top: 8px;
+		}
+	}
+
+	&__prev {
+		padding-left: 20px;
+	}
+
+	&__next {
+		padding-right: 20px;
+	}
+
+	&__prev::before {
+		transform: rotate(180deg);
+		left: 0;
+		background-image: url('../images/decors/arrow.svg');
+	}
+
+	&__next::before {
+		right: 0;
+		background-image: url('../images/decors/arrow.svg');
+	}
+
+	&__prev {
+		margin-right: 25px;
+	}
+
+	&__item {
+		margin: 0 15px;
+	}
+
+	&__list {
+		margin-right: 25px;
+		display: flex;
+	}
+
+	&__item--active {
+		color: $button-color;
+	}
+}
+
+%price {
+	color: $title-color;
+	@extend %Roboto-Medium;
+}
+
+.card__sum {
+	@extend %price;
+}
+
+%sum-action {
+	color: #ccccce;
+	text-decoration: line-through;
+}
+
+.card__sum-action {
+	@extend %sum-action;
+}
+
+.hidden {
+	display: none;
+}

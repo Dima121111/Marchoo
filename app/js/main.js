@@ -1,10 +1,19 @@
 $(function () {
-  $('.header-slider__inner').slick({
-    dots: true,
-    arrows: false,
-    fade: true,
-  });
-})
+  $('.products__select').styler();
+
+});
+
+const button = document.querySelectorAll('[data-tab]')
+
+button.forEach(function (item) {
+  item.addEventListener('click', function () {
+    this.dataset.tab
+    const contentBox = document.querySelector('#' + this.dataset.tab)
+    contentBox.classList.toggle('hidden')
+
+  })
+});
+
 
 $(".stars").rateYo({
   numStars: 5,
@@ -13,6 +22,63 @@ $(".stars").rateYo({
   ratedFill: "#ffc35b",
   readOnly: true,
 })
+
+const plus = document.querySelector('[data-plus]')
+const number = document.querySelector('[data-number]')
+const minus = document.querySelector('[data-minus]')
+
+plus.addEventListener('click', function () {
+  number.innerText = ++number.innerText
+
+})
+
+
+
+minus.addEventListener('click', function () {
+  number.innerText = --number.innerText;
+  if (parseInt(number.innerText) < 0) {
+    number.innerText = ++number.innerText
+  }
+})
+
+const { event } = require("jquery");
+
+$(function () {
+  $('.header-slider__inner').slick({
+    dots: true,
+    arrows: false,
+    fade: true,
+  });
+})
+
+
+
+$('.products__button').on('click', function () {
+  $('.products__button').removeClass('products__button--active')
+  $(this).addClass('products__button--active')
+})
+
+$('[button-row]').on('click', function () {
+  $('.card').addClass('active')
+})
+
+$('[button-column]').on('click', function () {
+  $('.card').removeClass('active')
+})
+
+$(".price__input").ionRangeSlider({
+  onStart: function (data) {
+    $('.price__min').text(data.from),
+      $('.price__max').text(data.to);
+  },
+  onChange: function (data) {
+    $('.price__min').text(data.from),
+      $('.price__max').text(data.to);
+  },
+});
+
+
+
 
 function getTimeRemaining(endtime) {
   const total = Date.parse(endtime) - Date.parse(new Date());
@@ -56,3 +122,4 @@ function initializeClock(id, endtime) {
 
 const deadline = $('.promo__wrap').attr('data-time');
 initializeClock('promo__wrap', deadline);
+

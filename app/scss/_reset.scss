@@ -43,12 +43,13 @@ img {
 
 input,
 button,
-textarea,
-select {
+select,
+textarea {
   font: inherit;
   border: none;
   background-color: transparent;
   outline: transparent;
+  margin: 0;
 }
 
 label {
